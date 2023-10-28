@@ -2,7 +2,7 @@ FROM python:3.11-slim-bullseye
 
 RUN useradd -mU mitmproxy
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gosu gcc zlib1g-dev libjpeg-dev libwebp-dev \
+    && apt-get install -y --no-install-recommends gosu gcc wget zlib1g-dev libjpeg-dev libwebp-dev \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install -U pip \
@@ -11,7 +11,7 @@ RUN pip3 install -U pip \
 
 VOLUME /home/mitmproxy/.mitmproxy
 
-RUN curl -o /usr/local/bin/docker-entrypoint.sh https://raw.githubusercontent.com/mitmproxy/mitmproxy/main/release/docker/docker-entrypoint.sh
+RUN wget -P /usr/local/bin https://raw.githubusercontent.com/mitmproxy/mitmproxy/main/release/docker/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 3126
