@@ -11,7 +11,8 @@ RUN pip3 install -U pip \
 
 VOLUME /home/mitmproxy/.mitmproxy
 
-RUN wget -P /usr/local/bin https://raw.githubusercontent.com/mitmproxy/mitmproxy/main/release/docker/docker-entrypoint.sh
+RUN wget -P /usr/local/bin https://raw.githubusercontent.com/mitmproxy/mitmproxy/main/release/docker/docker-entrypoint.sh \
+    && chmod 755 /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 3126
