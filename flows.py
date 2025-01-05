@@ -15,7 +15,7 @@ def response(flow):
     if (cl) > 10000:
 
      # jpeg を quality 10/100 に変換する
-     if (ct) [0:10] == ("image/jpeg"):
+     if (ct) [0:10] == ("image/jpeg") or (ct) [0:9] == ("image/jpg"):
          print("*** start %s ***" % (ru))
          start = time.time()
          img = Image.open(s)
