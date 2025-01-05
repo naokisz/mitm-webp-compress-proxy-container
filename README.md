@@ -17,7 +17,7 @@ docker build . -t mitm-webp-compress-proxy
 
 コンテナの起動
 ```bash
-docker run --rm -it -v ~/.mitmproxy:/home/mitmproxy/.mitmproxy -v ./:/home/mitmproxy/files -e MITM_USER=myusername -e MITM_PASS=mysupersafepass -p 3126:3126 mitm-webp-compress-proxy
+docker compose up -d
 ```
 
 [輻輳制御アルゴリズム TCP BBR の有効化｜株式会社ネットアシスト](https://www.netassist.ne.jp/techblog/13739/)もしておくと、幸せになれるかもしれないし、なれないかもしれない。
