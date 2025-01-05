@@ -1,0 +1,15 @@
+name: mitm-webp-compress-proxy
+services:
+    mitm-webp-compress-proxy:
+        stdin_open: true
+        tty: true
+        restart: always
+        volumes:
+            - ~/.mitmproxy:/home/mitmproxy/.mitmproxy
+            - ./:/home/mitmproxy/files
+        environment:
+            - MITM_USER=
+            - MITM_PASS=
+        ports:
+            - 3126:3126
+        image: mitm-webp-compress-proxy
