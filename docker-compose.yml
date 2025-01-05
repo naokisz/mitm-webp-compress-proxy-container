@@ -8,8 +8,8 @@ services:
             - ~/.mitmproxy:/home/mitmproxy/.mitmproxy
             - ./:/home/mitmproxy/files
         environment:
-            - MITM_USER=
-            - MITM_PASS=
+            - MITM_USER=myusername
+            - MITM_PASS=mysupersafepass
         ports:
             - 3126:3126
         image: mitm-webp-compress-proxy
